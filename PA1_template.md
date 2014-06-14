@@ -118,7 +118,7 @@ length(activityNaSteps$steps)
 
 ### 2 - Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-#### Filling NA's using mean of the same day or the mean for that 5-minute interval if the mean of the same date is NA
+#### Filling NA's using mean of the same day, or the mean of 5-minute interval if the mean of the same date is NA
 
 ```r
 activityDataWithoutNA = activityData
@@ -198,6 +198,20 @@ for(date in unique(strftime(activityDataWithoutNA$date) ) )
       }
   }
 activityDataWithoutNA$dayType = as.factor(activityDataWithoutNA$dayType)
+head(activityDataWithoutNA)
+```
+
+```
+##   steps       date interval dayType
+## 1 37.38 2012-10-01        0 Weekday
+## 2 37.38 2012-10-01        5 Weekday
+## 3 37.38 2012-10-01       10 Weekday
+## 4 37.38 2012-10-01       15 Weekday
+## 5 37.38 2012-10-01       20 Weekday
+## 6 37.38 2012-10-01       25 Weekday
+```
+
+```r
 table(activityDataWithoutNA$dayType)
 ```
 
